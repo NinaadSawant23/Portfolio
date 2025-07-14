@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ninaad Sawant | Data Engineer</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: "Poppins", sans-serif;
+                color: #fff;
+            }
+
+            /* HEADER */
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background: #3e3e3e;
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            header h1 {
+                color: #ffffff;
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                color: #ffffff;
+                margin-left: 1.5rem;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            nav a:hover {
+                color: #f5f0eb;
+            }
+
+            /* HERO */
+            .hero {
+                height: 100vh;
+                background-image: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.6),
+                        rgba(0, 0, 0, 0.7)
+                    ),
+                    url("https://images.unsplash.com/photo-1556761175-4b46a572b786");
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2.8rem;
+                color: #ffffff;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 700px;
+                color: #f5f5f5;
+            }
+
+            @media (max-width: 768px) {
+                .hero h2 {
+                    font-size: 2rem;
+                }
+                nav a {
+                    margin-left: 1rem;
+                    font-size: 0.95rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEADER -->
+ 
+	      
+
+        <header
+            style="
+                position: relative;
+                height: 100vh;
+                background: url('images/hero.jpeg') no-repeat center
+                    center/cover;
+            "
+        >
+            <div
+                style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(255, 255, 255, 0.75);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: left;
+                    padding: 2rem;
+                "
+            >
+	    <div style="position: absolute; top: 0; left: 0; right: 0; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+		<h1 style="color: #3e3e3e; font-size: 1.5rem; font-weight: 600;">NS</h1>
+		<nav style="display: flex; gap: 1.5rem;">
+		  <a href="#about" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">About</a>
+		  <a href="#skills" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Skills</a>
+		  <a href="#projects" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Projects</a>
+		  <a href="#timeline" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Timeline</a>
+		  <a href="#contact" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Contact</a>
+		</nav>
+	      </div>
+                <div style="max-width: 600px">
+			
+                    <h1
+                        style="
+                            font-size: 3rem;
+                            color: #3e3e3e;
+                            margin-bottom: 0.5rem;
+                            font-weight: 700;
+                        "
+                    >
+                        Ninaad Sawant
+                    </h1>
+                    <p
+                        id="typing-text"
+                        style="
+                            font-size: 1.2rem;
+                            color: #444;
+                            font-weight: 400;
+                            margin-bottom: 1.5rem;
+                        "
+                    >
+                        I do
+                    </p>
+                    <div style="display: flex; gap: 1rem; align-items: center">
+                        <a
+                            href="https://www.linkedin.com/in/yourlinkedin"
+                            target="_blank"
+                            style="color: #3e3e3e; font-size: 1.3rem"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a
+                            href="https://github.com/yourusername"
+                            target="_blank"
+                            style="color: #3e3e3e; font-size: 1.3rem"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                            href="#contact"
+                            style="color: #3e3e3e; font-size: 1.3rem"
+                        >
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <script>
+            const text = "Data Engineering | Analytics | Visualization";
+            let i = 0;
+            const speed = 80;
+            const target = document.getElementById("typing-text");
+
+            function typeWriter() {
+                if (i < text.length) {
+                    target.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            window.onload = typeWriter;
+        </script>
+
+        <!-- ABOUT SECTION -->
+        <section
+            id="about"
+            style="
+                padding: 5rem 2rem;
+                max-width: 900px;
+                margin: auto;
+                background: #fdfdfd;
+            "
+        >
+            <h2
+                style="
+                    color: #3e3e3e;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                "
+            >
+                About Me
+            </h2>
+            <p
+                style="
+                    font-size: 1.1rem;
+                    color: #3e3e3e;
+                    line-height: 1.6;
+                    text-align: center;
+                "
+            >
+                I’m a Data Engineer with 2.5 years of experience at Infosys and
+                a Master’s degree in Computer Science from Clark University. I
+                specialize in building scalable ETL pipelines, APIs, and
+                real-time data systems using Python, PySpark, AWS, Azure, and
+                Snowflake. I'm passionate about transforming data into insights
+                and enabling better decisions through clean, efficient
+                engineering.
+            </p>
+        </section>
+
+        <section id="skills" style="padding: 5rem 2rem; background: #fdfdfd">
+            <h2
+                style="
+                    color: #3e3e3e;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                "
+            >
+                Skills
+            </h2>
+
+            <div
+                style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                    max-width: 1000px;
+                    margin: auto;
+                "
+            >
+                <!-- Programming -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        🖥️ Programming
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>Python</li>
+                        <li>Scala</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <!-- Big Data & ETL -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        🔄 Big Data & ETL
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>PySpark</li>
+                        <li>Apache Kafka</li>
+                        <li>HiveQL</li>
+                        <li>Airflow</li>
+                        <li>DBT</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud Platforms -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        ☁️ Cloud Platforms
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>AWS (S3, Glue, Redshift)</li>
+                        <li>Azure (ADF, Databricks)</li>
+                        <li>Snowflake</li>
+                    </ul>
+                </div>
+
+                <!-- Databases -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        🗃️ Databases
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Elasticsearch</li>
+                    </ul>
+                </div>
+
+                <!-- Visualization & BI -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        📊 Visualization & BI
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>QuickSight</li>
+                        <li>Excel</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div
+                    style="
+                        background: #fcf8f4;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3
+                        style="
+                            color: #3e3e3e;
+                            font-size: 1.3rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        "
+                    >
+                        🧰 Tools & DevOps
+                    </h3>
+                    <ul
+                        style="
+                            color: #3e3e3e;
+                            list-style: none;
+                            padding-left: 1rem;
+                            margin-top: 0.8rem;
+                        "
+                    >
+                        <li>GitHub</li>
+                        <li>Jenkins</li>
+                        <li>Postman</li>
+                        <li>Unix</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="timeline" style="padding: 5rem 2rem; background: #fdfdfd">
+            <h2
+                style="
+                    color: #3e3e3e;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                "
+            >
+                Timeline
+            </h2>
+
+            <style>
+                .timeline-wrapper {
+                    position: relative;
+                    max-width: 900px;
+                    margin: auto;
+                }
+
+                .timeline-line {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 4px;
+                    height: 100%;
+                    background-color: #3e3e3e;
+                    transform: translateX(-50%);
+                }
+
+                .timeline-entry {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 3rem;
+                }
+
+                .timeline-entry.right {
+                    flex-direction: row-reverse;
+                }
+
+                .timeline-card {
+                    width: 42%;
+                    background: #fcf8f4;
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                }
+
+                .timeline-dot {
+                    position: absolute;
+                    left: 50%;
+                    top: 20px;
+                    width: 18px;
+                    height: 18px;
+                    background: #3e3e3e;
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 5;
+                }
+
+                .timeline-card h3 {
+                    margin: 0;
+                    font-size: 1.2rem;
+                    color: #3e3e3e;
+                }
+
+                .timeline-card p {
+                    margin: 0.3rem 0;
+                    font-size: 0.95rem;
+                    color: #3e3e3e;
+                }
+
+                @media (max-width: 768px) {
+                    .timeline-entry {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .timeline-card {
+                        width: 100%;
+                        margin-left: 2rem;
+                    }
+
+                    .timeline-dot {
+                        left: 20px;
+                        top: 0.8rem;
+                        transform: translateX(0);
+                    }
+
+                    .timeline-line {
+                        left: 20px;
+                    }
+                }
+            </style>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+
+                <!-- 1. Masters -->
+                <div class="timeline-entry left">
+                    <div class="timeline-card">
+                        <h3>Jan 2024 – May 2025</h3>
+                        <p>Master of Science, Computer Science</p>
+                        <p style="font-size: 0.85rem">
+                            Clark University, Worcester
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- 3. Infosys -->
+                <div class="timeline-entry right">
+                    <div class="timeline-card">
+                        <h3>May 2021 – Nov 2023</h3>
+                        <p>Data Engineer</p>
+                        <p style="font-size: 0.85rem">Infosys Ltd, Pune</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- 2. Internship -->
+                <div class="timeline-entry left">
+                    <div class="timeline-card">
+                        <h3>Aug 2020 – Nov 2020</h3>
+                        <p>Software Developer, Intern</p>
+                        <p style="font-size: 0.85rem">Bloombit, Goa</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- 1. Bachelors -->
+                <div class="timeline-entry right">
+                    <div class="timeline-card">
+                        <h3>Aug 2016 – Nov 2020</h3>
+                        <p>Bachelor of Engineering, Electronics</p>
+                        <p style="font-size: 0.85rem">
+                            Vidyalankar Institute of Technology, Mumbai
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" style="padding: 5rem 2rem; background: #fdfdfd">
+            <h2
+                style="
+                    color: #3e3e3e;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                "
+            >
+                Projects
+            </h2>
+
+            <style>
+                .projects-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                    max-width: 1100px;
+                    margin: auto;
+                }
+
+                .project-card {
+                    background: #ffffff;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    transition: transform 0.3s ease;
+                }
+
+                .project-card:hover {
+                    transform: translateY(-5px);
+                }
+
+                .project-image {
+                    height: 180px;
+                    object-fit: cover;
+                    width: 100%;
+                }
+
+                .project-body {
+                    padding: 1.5rem;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .project-body h3 {
+                    color: #3e3e3e;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    margin-bottom: 0.6rem;
+                }
+
+                .project-body p {
+                    font-size: 0.95rem;
+                    color: #3e3e3e;
+                    text-align: center;
+                    margin-bottom: 0.6rem;
+                }
+
+                .project-body .tech {
+                    font-size: 0.85rem;
+                    font-style: italic;
+                    color: #666;
+                }
+
+                .project-body .project-link {
+                    margin-top: 1rem;
+                    text-align: center;
+                }
+
+                .project-body .project-link a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    color: #3e3e3e; /* dusky brown text */
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    text-decoration: none;
+                    border: 1px solid #3e3e3e; /* dusky brown border */
+                    border-radius: 6px;
+                    padding: 0.4rem 0.8rem;
+                    transition: background 0.3s ease, color 0.3s ease;
+                    background-color: transparent;
+                }
+
+                .project-body .project-link a:hover {
+                    color: #6d452f; /* slightly darker dusky brown */
+                    text-decoration: underline;
+                }
+
+                .github-button-wrapper {
+                    text-align: center;
+                    margin-top: 3rem;
+                }
+
+                .github-button-wrapper a {
+                    background-color: #3e3e3e;
+                    color: #fff;
+                    padding: 0.7rem 1.5rem;
+                    border-radius: 8px;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    transition: background 0.3s ease;
+                }
+
+                .github-button-wrapper a:hover {
+                    background-color: #6d452f;
+                }
+            </style>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/tableau.jpg"
+                        alt="Tableau Dashboard"
+                    />
+                    <div class="project-body">
+                        <h3>Sales Analytics Dashboard</h3>
+                        <p>
+                            Interactive dashboard visualizing 10K+ transactions
+                            with YoY KPIs and filters.
+                        </p>
+                        <p class="tech">Tableau, Excel</p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/snowflake.jpeg"
+                        alt="Snowflake Project"
+                    />
+                    <div class="project-body">
+                        <h3>Snowflake Revenue Analytics</h3>
+                        <p>
+                            Delivered 20+ KPIs via Snowflake DW with star schema
+                            data model.
+                        </p>
+                        <p class="tech">
+                            Python, SQL, Snowflake, Data Modeling
+                        </p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/AWS.png"
+                        alt="Spotify ETL"
+                    />
+                    <div class="project-body">
+                        <h3>Spotify ETL Pipeline</h3>
+                        <p>
+                            Processed 900K+ records using Glue, S3, and
+                            QuickSight for trend analysis.
+                        </p>
+                        <p class="tech">
+                            PySpark, AWS Glue, S3, Crawler, QuickSight
+                        </p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/azure-cloud.png"
+                        alt="Azure Synapse"
+                    />
+                    <div class="project-body">
+                        <h3>Azure Synapse Pipeline</h3>
+                        <p>
+                            Improved Power BI performance by 25% via optimized
+                            Azure pipeline for 75K+ records.
+                        </p>
+                        <p class="tech">
+                            PySpark, SQL, Azure Data Factory, Synapse
+                        </p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/swms.png"
+                        alt="Smart Waste"
+                    />
+                    <div class="project-body">
+                        <h3>Smart Waste Management</h3>
+                        <p>
+                            ML-based Django app predicting carbon savings using
+                            online learning model.
+                        </p>
+                        <p class="tech">Python, Django, ML, Matplotlib</p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/genAI.png"
+                        alt="GenAI"
+                    />
+                    <div class="project-body">
+                        <h3>GenAI LinkedIn Post Generator</h3>
+                        <p>
+                            Used LLaMa 3 + LangChain to generate LinkedIn posts
+                            with 85% engagement prediction.
+                        </p>
+                        <p class="tech">Python, LLaMA 3, LangChain, ML</p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/cancerdetection.png"
+                        alt="Cancer Detection"
+                    />
+                    <div class="project-body">
+                        <h3>Breast Cancer Detection App</h3>
+                        <p>
+                            Achieved 96.2% accuracy with logistic regression and
+                            live UI validation.
+                        </p>
+                        <p class="tech">Python, ML, Streamlit</p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img
+                        class="project-image"
+                        src="images/UI.png"
+                        alt="Movie Recommender"
+                    />
+                    <div class="project-body">
+                        <h3>Movie Recommendation System</h3>
+                        <p>
+                            Built a similarity-based recommender with 1.5s
+                            response on 4.8K+ records.
+                        </p>
+                        <p class="tech">Python, Pandas, Cosine Similarity</p>
+                        <div class="project-link">
+                            <a
+                                href="https://github.com/yourusername/project-repo"
+                                target="_blank"
+                            >
+                                <img
+                                    src="images/giticon.png"
+                                    alt="GitHub"
+                                    style="width: 20px; height: 20px"
+                                />
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="github-button-wrapper">
+                <a href="https://github.com/ninaadsawant23" target="_blank"
+                    >View More on GitHub</a
+                >
+            </div>
+        </section>
+        <section
+            id="contact"
+            style="padding: 5rem 2rem; background: #fcf8f4; text-align: center"
+        >
+            <h2 style="color: #3e3e3e; font-size: 2rem; margin-bottom: 2rem">
+                Contact
+            </h2>
+            <p
+                style="
+                    font-size: 1rem;
+                    color: #444;
+                    max-width: 600px;
+                    margin: 0 auto 2rem auto;
+                "
+            >
+                Feel free to reach out for collaborations, opportunities, or
+                just to connect.
+            </p>
+            <div
+                style="
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    flex-wrap: wrap;
+                "
+            >
+                <a
+                    href="mailto:youremail@example.com"
+                    style="
+                        color: #3e3e3e;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        text-decoration: none;
+                    "
+                    >📧 Email</a
+                >
+                <a
+                    href="https://www.linkedin.com/in/yourlinkedin"
+                    target="_blank"
+                    style="
+                        color: #3e3e3e;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        text-decoration: none;
+                    "
+                    >🔗 LinkedIn</a
+                >
+                <a
+                    href="https://github.com/yourusername"
+                    target="_blank"
+                    style="
+                        color: #3e3e3e;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        text-decoration: none;
+                    "
+                    >💻 GitHub</a
+                >
+            </div>
+        </section>
+    </body>
+</html>
