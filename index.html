@@ -12,6 +12,10 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.5.0/css/all.css"
+        />
 
         <style>
             * {
@@ -100,8 +104,6 @@
     </head>
     <body>
         <!-- HEADER -->
- 
-	      
 
         <header
             style="
@@ -111,6 +113,7 @@
                     center/cover;
             "
         >
+            <!-- Dark overlay -->
             <div
                 style="
                     position: absolute;
@@ -118,30 +121,79 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: rgba(255, 255, 255, 0.75);
+                    background: rgba(0, 0, 0, 0.6);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    text-align: left;
+                    text-align: center;
                     padding: 2rem;
                 "
             >
-	    <div style="position: absolute; top: 0; left: 0; right: 0; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
-		<h1 style="color: #3e3e3e; font-size: 1.5rem; font-weight: 600;">NS</h1>
-		<nav style="display: flex; gap: 1.5rem;">
-		  <a href="#about" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">About</a>
-		  <a href="#skills" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Skills</a>
-		  <a href="#projects" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Projects</a>
-		  <a href="#timeline" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Timeline</a>
-		  <a href="#contact" style="color: #3e3e3e; text-decoration: none; font-weight: 500;">Contact</a>
-		</nav>
-	      </div>
+                <!-- Fixed Header -->
+                <div
+                    id="main-header"
+                    style="
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 1rem 2rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background: transparent;
+                        z-index: 1000;
+                    "
+                >
+                    <h1
+                        class="nav-item"
+                        style="font-size: 1.5rem; font-weight: 600"
+                    >
+                        NS
+                    </h1>
+                    <nav style="display: flex; gap: 1.5rem">
+                        <a
+                            href="#about"
+                            class="nav-item"
+                            style="text-decoration: none; font-weight: 500"
+                            >About</a
+                        >
+
+                        <a
+                            href="#timeline"
+                            class="nav-item"
+                            style="text-decoration: none; font-weight: 500"
+                            >Timeline</a
+                        >
+
+                        <a
+                            href="#skills"
+                            class="nav-item"
+                            style="text-decoration: none; font-weight: 500"
+                            >Skills</a
+                        >
+                        <a
+                            href="#projects"
+                            class="nav-item"
+                            style="text-decoration: none; font-weight: 500"
+                            >Projects</a
+                        >
+
+                        <a
+                            href="#contact"
+                            class="nav-item"
+                            style="text-decoration: none; font-weight: 500"
+                            >Contact</a
+                        >
+                    </nav>
+                </div>
+
+                <!-- Hero Content -->
                 <div style="max-width: 600px">
-			
                     <h1
                         style="
                             font-size: 3rem;
-                            color: #3e3e3e;
+                            color: #ffffff;
                             margin-bottom: 0.5rem;
                             font-weight: 700;
                         "
@@ -152,31 +204,42 @@
                         id="typing-text"
                         style="
                             font-size: 1.2rem;
-                            color: #444;
+                            color: #ffffff;
                             font-weight: 400;
                             margin-bottom: 1.5rem;
                         "
                     >
                         I do
                     </p>
-                    <div style="display: flex; gap: 1rem; align-items: center">
+                    <div
+                        style="
+                            display: flex;
+                            gap: 1rem;
+                            align-items: center;
+                            justify-content: center;
+                        "
+                    >
                         <a
                             href="https://www.linkedin.com/in/yourlinkedin"
                             target="_blank"
-                            style="color: #3e3e3e; font-size: 1.3rem"
+                            class="nav-item"
+                            style="font-size: 1.3rem; color: #fff;"
                         >
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a
                             href="https://github.com/yourusername"
                             target="_blank"
-                            style="color: #3e3e3e; font-size: 1.3rem"
+                            class="nav-item"
+                            style="font-size: 1.3rem; color: #fff;"
                         >
                             <i class="fab fa-github"></i>
                         </a>
                         <a
                             href="#contact"
-                            style="color: #3e3e3e; font-size: 1.3rem"
+                            class="nav-item"
+                            style="font-size: 1.3rem; color: #fff;"
+
                         >
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -185,20 +248,70 @@
             </div>
         </header>
 
-        <script>
-            const text = "Data Engineering | Analytics | Visualization";
-            let i = 0;
-            const speed = 80;
-            const target = document.getElementById("typing-text");
-
-            function typeWriter() {
-                if (i < text.length) {
-                    target.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
+        <!-- Style for nav color toggle -->
+        <style>
+            #main-header .nav-item {
+                color: #ffffff !important;
+                transition: color 0.3s ease;
             }
-            window.onload = typeWriter;
+
+            #main-header.scrolled .nav-item {
+                color: #3e3e3e !important;
+            }
+        </style>
+
+        <!-- Typing animation + scroll color toggle -->
+        <script>
+            const phrases = [
+                "Data Engineering",
+                "Analytics",
+                "Visualization",
+                "Cloud Pipelines",
+                "Real-time ETL",
+                "Machine Learning",
+            ];
+            const target = document.getElementById("typing-text");
+            let i = 0,
+                j = 0;
+            let currentPhrase = "";
+            let isDeleting = false;
+
+            function typeLoop() {
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase = phrases[i].substring(0, j++);
+                } else if (isDeleting && j >= 0) {
+                    currentPhrase = phrases[i].substring(0, j--);
+                }
+
+                target.textContent = `I do ${currentPhrase}`;
+
+                if (!isDeleting && j === phrases[i].length + 1) {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        typeLoop();
+                    }, 1500);
+                    return;
+                } else if (isDeleting && j === 0) {
+                    isDeleting = false;
+                    i = (i + 1) % phrases.length;
+                }
+
+                setTimeout(typeLoop, isDeleting ? 50 : 80);
+            }
+
+            window.onload = typeLoop;
+
+            // Scroll-based header color change
+            const header = document.getElementById("main-header");
+            const heroHeight = window.innerHeight;
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > heroHeight - 80) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
         </script>
 
         <!-- ABOUT SECTION -->
@@ -234,250 +347,11 @@
                 specialize in building scalable ETL pipelines, APIs, and
                 real-time data systems using Python, PySpark, AWS, Azure, and
                 Snowflake. I'm passionate about transforming data into insights
-                and enabling better decisions through clean, efficient
-                engineering.
+                and enabling better decisions through clean and efficient engineering.
             </p>
         </section>
 
-        <section id="skills" style="padding: 5rem 2rem; background: #fdfdfd">
-            <h2
-                style="
-                    color: #3e3e3e;
-                    font-size: 2rem;
-                    text-align: center;
-                    margin-bottom: 3rem;
-                "
-            >
-                Skills
-            </h2>
-
-            <div
-                style="
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                    gap: 2rem;
-                    max-width: 1000px;
-                    margin: auto;
-                "
-            >
-                <!-- Programming -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        🖥️ Programming
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>Python</li>
-                        <li>Scala</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-
-                <!-- Big Data & ETL -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        🔄 Big Data & ETL
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>PySpark</li>
-                        <li>Apache Kafka</li>
-                        <li>HiveQL</li>
-                        <li>Airflow</li>
-                        <li>DBT</li>
-                    </ul>
-                </div>
-
-                <!-- Cloud Platforms -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        ☁️ Cloud Platforms
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>AWS (S3, Glue, Redshift)</li>
-                        <li>Azure (ADF, Databricks)</li>
-                        <li>Snowflake</li>
-                    </ul>
-                </div>
-
-                <!-- Databases -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        🗃️ Databases
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>PostgreSQL</li>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>Elasticsearch</li>
-                    </ul>
-                </div>
-
-                <!-- Visualization & BI -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        📊 Visualization & BI
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>QuickSight</li>
-                        <li>Excel</li>
-                    </ul>
-                </div>
-
-                <!-- Tools & DevOps -->
-                <div
-                    style="
-                        background: #fcf8f4;
-                        padding: 1rem 1.5rem;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                        transition: transform 0.3s ease;
-                    "
-                >
-                    <h3
-                        style="
-                            color: #3e3e3e;
-                            font-size: 1.3rem;
-                            display: flex;
-                            align-items: center;
-                            gap: 0.5rem;
-                        "
-                    >
-                        🧰 Tools & DevOps
-                    </h3>
-                    <ul
-                        style="
-                            color: #3e3e3e;
-                            list-style: none;
-                            padding-left: 1rem;
-                            margin-top: 0.8rem;
-                        "
-                    >
-                        <li>GitHub</li>
-                        <li>Jenkins</li>
-                        <li>Postman</li>
-                        <li>Unix</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- TIMELINE SECTION -->
         <section id="timeline" style="padding: 5rem 2rem; background: #fdfdfd">
             <h2
                 style="
@@ -624,6 +498,287 @@
             </div>
         </section>
 
+        <!-- SKILLS SECTION -->
+        <section id="skills" style="padding: 5rem 2rem; background: #fdfdfd">
+            <h2
+                style="
+                    color: #3e3e3e;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                "
+            >
+                Skills
+            </h2>
+
+            <div style="display: flex; justify-content: center">
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fill,
+                            minmax(300px, 1fr)
+                        );
+                        gap: 2rem;
+                        max-width: 1000px;
+                        width: 100%;
+                    "
+                >
+                    <!-- Skill Category Card -->
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            🖥️ Programming
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>Python</li>
+                            <li>Scala</li>
+                            <li>SQL</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            🔄 Big Data & ETL
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>PySpark</li>
+                            <li>Apache Kafka</li>
+                            <li>Databricks</li>
+                            <li>Airflow</li>
+                            <li>DBT</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            ☁️ Cloud Platforms
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>AWS</li>
+                            <li>Azure</li>
+                            <li>GCP</li>
+                            <li>Snowflake</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            🗃️ Databases
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Elasticsearch</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            📊 Visualization & BI
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>Tableau</li>
+                            <li>Power BI</li>
+                            <li>QuickSight</li>
+                            <li>Excel</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            🧰 Tools & DevOps
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>GitHub</li>
+                            <li>Jenkins</li>
+                            <li>Postman</li>
+                            <li>Unix</li>
+                        </ul>
+                    </div>
+                    <div
+                        style="
+                            grid-column: 2 / span 1;
+                            background: #fcf8f4;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                            text-align: center;
+                        "
+                    >
+                        <h3
+                            style="
+                                color: #3e3e3e;
+                                font-size: 1.3rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            🧠 Data Science
+                        </h3>
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.8rem;
+                                color: #3e3e3e;
+                            "
+                        >
+                            <li>Regression</li>
+                            <li>Classification</li>
+                            <li>Clustering</li>
+                            <li>LLM</li>
+                            <li>NLP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
         <section id="projects" style="padding: 5rem 2rem; background: #fdfdfd">
             <h2
                 style="
@@ -926,6 +1081,8 @@
                 >
             </div>
         </section>
+
+        <!-- CONTACT SECTION -->
         <section
             id="contact"
             style="padding: 5rem 2rem; background: #fcf8f4; text-align: center"
