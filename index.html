@@ -26,7 +26,7 @@
             }
             body {
                 font-family: "Poppins", sans-serif;
-                color: #fff;
+                color: #3e3e3e;
             }
 
             /* HEADER */
@@ -40,16 +40,16 @@
                 justify-content: space-between;
                 align-items: center;
                 z-index: 1000;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             }
 
             header h1 {
-                color: #ffffff;
+                color: #3e3e3e;
                 font-size: 1.5rem;
             }
 
             nav a {
-                color: #ffffff;
+                color: #3e3e3e;
                 margin-left: 1.5rem;
                 text-decoration: none;
                 font-weight: 500;
@@ -57,7 +57,7 @@
             }
 
             nav a:hover {
-                color: #f5f0eb;
+                color: #000;
             }
 
             /* HERO */
@@ -65,8 +65,8 @@
                 height: 100vh;
                 background-image: linear-gradient(
                         to bottom,
-                        rgba(0, 0, 0, 0.6),
-                        rgba(0, 0, 0, 0.7)
+                        rgba(255, 255, 255, 0.8),
+                        rgba(255, 255, 255, 0.9)
                     ),
                     url("https://images.unsplash.com/photo-1556761175-4b46a572b786");
                 background-size: cover;
@@ -77,18 +77,17 @@
                 align-items: center;
                 text-align: center;
                 padding: 0 2rem;
+                color: #3e3e3e;
             }
 
             .hero h2 {
                 font-size: 2.8rem;
-                color: #ffffff;
                 margin-bottom: 1rem;
             }
 
             .hero p {
                 font-size: 1.2rem;
                 max-width: 700px;
-                color: #f5f5f5;
             }
 
             @media (max-width: 768px) {
@@ -113,7 +112,7 @@
                     center/cover;
             "
         >
-            <!-- Dark overlay -->
+            <!-- Light overlay -->
             <div
                 style="
                     position: absolute;
@@ -121,7 +120,7 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: rgba(0, 0, 0, 0.6);
+                    background: rgba(255, 255, 255, 0.75);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -145,44 +144,80 @@
                         z-index: 1000;
                     "
                 >
-                    <h1
-                        class="nav-item"
-                        style="font-size: 1.5rem; font-weight: 600"
-                    >
-                        NS
-                    </h1>
+                    <!-- <a href="#hero">
+                        <img
+                            src="images/logo.png"
+                            alt="Ninaad Sawant Logo"
+                            style="height: 100px; display: block"
+                        />
+                    </a> -->
+
+                    <h1>NS</h1>
+
                     <nav style="display: flex; gap: 1.5rem">
                         <a
                             href="#about"
                             class="nav-item"
-                            style="text-decoration: none; font-weight: 500"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
                             >About</a
                         >
 
                         <a
                             href="#timeline"
                             class="nav-item"
-                            style="text-decoration: none; font-weight: 500"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
                             >Timeline</a
                         >
 
                         <a
                             href="#skills"
                             class="nav-item"
-                            style="text-decoration: none; font-weight: 500"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
                             >Skills</a
                         >
                         <a
                             href="#projects"
                             class="nav-item"
-                            style="text-decoration: none; font-weight: 500"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
                             >Projects</a
                         >
 
                         <a
+                            href="#certificates"
+                            class="nav-item"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
+                            >Certificates</a
+                        >
+
+
+                        <a
                             href="#contact"
                             class="nav-item"
-                            style="text-decoration: none; font-weight: 500"
+                            style="
+                                text-decoration: none;
+                                font-weight: 1000;
+                                color: #3e3e3e;
+                            "
                             >Contact</a
                         >
                     </nav>
@@ -193,7 +228,7 @@
                     <h1
                         style="
                             font-size: 3rem;
-                            color: #ffffff;
+                            color: #3e3e3e;
                             margin-bottom: 0.5rem;
                             font-weight: 700;
                         "
@@ -204,7 +239,7 @@
                         id="typing-text"
                         style="
                             font-size: 1.2rem;
-                            color: #ffffff;
+                            color: #3e3e3e;
                             font-weight: 400;
                             margin-bottom: 1.5rem;
                         "
@@ -223,7 +258,7 @@
                             href="https://www.linkedin.com/in/ninaadsawant"
                             target="_blank"
                             class="nav-item"
-                            style="font-size: 1.3rem; color: #fff"
+                            style="font-size: 1.3rem; color: #3e3e3e"
                         >
                             <i class="fab fa-linkedin"></i>
                         </a>
@@ -231,14 +266,14 @@
                             href="https://github.com/ninaadsawant23"
                             target="_blank"
                             class="nav-item"
-                            style="font-size: 1.3rem; color: #fff"
+                            style="font-size: 1.3rem; color: #3e3e3e"
                         >
                             <i class="fab fa-github"></i>
                         </a>
                         <a
                             href="mailto:ninaadsawant23@gmail.com"
                             class="nav-item"
-                            style="font-size: 1.3rem; color: #fff"
+                            style="font-size: 1.3rem; color: #3e3e3e"
                         >
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -250,7 +285,7 @@
         <!-- Style for nav color toggle -->
         <style>
             #main-header .nav-item {
-                color: #ffffff !important;
+                color: #3e3e3e !important;
                 transition: color 0.3s ease;
             }
 
@@ -259,7 +294,6 @@
             }
         </style>
 
-        <!-- Typing animation + scroll color toggle -->
         <script>
             const phrases = [
                 "Data Engineering",
@@ -299,18 +333,6 @@
             }
 
             window.onload = typeLoop;
-
-            // Scroll-based header color change
-            const header = document.getElementById("main-header");
-            const heroHeight = window.innerHeight;
-
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > heroHeight - 80) {
-                    header.classList.add("scrolled");
-                } else {
-                    header.classList.remove("scrolled");
-                }
-            });
         </script>
 
         <!-- ABOUT SECTION -->
@@ -1131,7 +1153,247 @@
             </div>
         </section>
 
+        <section
+            id="certificates"
+            style="padding: 4rem 2rem; background: #fdfdfd"
+        >
+        <div style="text-align: center; margin-bottom: 2rem">
+            <h2
+                style="
+                    font-size: 2rem;
+                    color: #3e3e3e;
+                    margin-bottom: 0.5rem;
+                "
+            >
+                Certificates
+            </h2>
+            <hr
+                style="
+                    width: 60px;
+                    height: 2px;
+                    background-color: #3e3e3e;
+                    border: none;
+                    margin: 0 auto;
+                "
+            />
+        </div>
+            <div
+                style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2rem;
+                    max-width: 1000px;
+                    margin: auto;
+                "
+            >
+                <!-- Certificate Card -->
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        AWS Cloud Practitioner
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                        AWS · Issued 2025
+                    </p>
+
+                    <img
+                        src="images/certificates/AWSCloudPractitioner.png"
+                        alt="AWS Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        AWS Certified Data Engineer
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                    AWS · Issued 2025
+                    </p>
+
+                    <img
+                        src="images/certificates/AWSDataEngineer.png"
+                        alt="AWS Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        Machine Learning A-Z
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                        Udemy · Issued 2025
+                    </p>
+
+                    <img
+                        src="images/certificates/UdemyML.png"
+                        al Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        SQL for Data Science
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                        Coursera · Issued 2020
+                    </p>
+
+                    <img
+                        src="images/certificates/SQL.png"
+                        alt="AWS Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        Python For Everyone
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                        Coursera · Issued 2020
+                    </p>
+
+                    <img
+                        src="images/certificates/Python.png"
+                        alt="AWS Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+
+                <div
+                    style="
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+                        padding: 1.5rem;
+                        transition: transform 0.3s ease;
+                    "
+                >
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem">
+                        Java Masterclass
+                    </h3>
+                    <p
+                        style="
+                            font-size: 0.9rem;
+                            color: #777;
+                            margin-bottom: 0.8rem;
+                        "
+                    >
+                        Udemy · Issued 2020
+                    </p>
+
+                    <img
+                        src="images/certificates/java.png"
+                        alt="AWS Certificate"
+                        style="
+                            width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 0.8rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        "
+                    />
+                </div>
+            </div>
+        </section>
+
         <footer
+            id="contact"
             style="
                 background-color: #fcf8f4;
                 padding: 2rem 1rem;
