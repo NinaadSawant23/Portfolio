@@ -99,8 +99,60 @@
                     font-size: 0.95rem;
                 }
             }
+
+            @media (max-width: 768px) {
+                #hamburger {
+                    display: block !important;
+                }
+
+                #nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    right: 1.5rem;
+                    width: auto;
+                    background: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    z-index: 999;
+                    text-align: right;
+                }
+
+                #nav-links.show {
+                    display: flex;
+                }
+
+                #nav-links a {
+                    margin: 0.5rem 0;
+                    white-space: nowrap;
+                }
+            }
         </style>
     </head>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("nav-links");
+            const icon = document.getElementById("menu-icon");
+
+            const isOpen = nav.classList.toggle("show");
+
+            if (isOpen) {
+                icon.innerHTML = `
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                `;
+            } else {
+                icon.innerHTML = `
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                `;
+            }
+        }
+    </script>
+
     <body>
         <!-- HEADER -->
 
@@ -144,17 +196,36 @@
                         z-index: 1000;
                     "
                 >
-                    <!-- <a href="#hero">
-                        <img
-                            src="images/logo.png"
-                            alt="Ninaad Sawant Logo"
-                            style="height: 100px; display: block"
-                        />
-                    </a> -->
+                    <h1 style="margin: 0; font-size: 1.5rem; color: #3e3e3e">
+                        NS
+                    </h1>
 
-                    <h1>NS</h1>
+                    <!-- Hamburger Icon -->
+                    <div
+                        id="hamburger"
+                        onclick="toggleMenu(this)"
+                        style="cursor: pointer; display: none"
+                    >
+                        <svg
+                            id="menu-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#3e3e3e"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </div>
 
-                    <nav style="display: flex; gap: 1.5rem">
+                    <!-- Navigation -->
+                    <nav id="nav-links">
                         <a
                             href="#about"
                             class="nav-item"
@@ -165,7 +236,6 @@
                             "
                             >About</a
                         >
-
                         <a
                             href="#timeline"
                             class="nav-item"
@@ -176,7 +246,6 @@
                             "
                             >Timeline</a
                         >
-
                         <a
                             href="#skills"
                             class="nav-item"
@@ -197,7 +266,6 @@
                             "
                             >Projects</a
                         >
-
                         <a
                             href="#certificates"
                             class="nav-item"
@@ -208,8 +276,6 @@
                             "
                             >Certificates</a
                         >
-
-
                         <a
                             href="#contact"
                             class="nav-item"
@@ -474,22 +540,24 @@
                 @media (max-width: 768px) {
                     .timeline-entry {
                         flex-direction: column;
-                        align-items: flex-start;
+                        align-items: center;
+                        text-align: center;
                     }
 
                     .timeline-card {
                         width: 100%;
-                        margin-left: 2rem;
+                        margin: 0 0 2rem 0;
                     }
 
                     .timeline-dot {
-                        left: 20px;
-                        top: 0.8rem;
-                        transform: translateX(0);
+                        left: 50%;
+                        top: -10px;
+                        transform: translateX(-50%);
                     }
 
                     .timeline-line {
-                        left: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                 }
             </style>
@@ -571,6 +639,7 @@
 
             <div style="display: flex; justify-content: center">
                 <div
+                    class="grid-container"
                     style="
                         display: grid;
                         grid-template-columns: repeat(
@@ -796,8 +865,8 @@
                         </ul>
                     </div>
                     <div
+                        class="last-card"
                         style="
-                            grid-column: 2 / span 1;
                             background: #fcf8f4;
                             padding: 1.5rem;
                             border-radius: 8px;
@@ -834,6 +903,17 @@
                     </div>
                 </div>
             </div>
+            <style>
+                @media (max-width: 768px) {
+                    #skills .grid-container {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    #skills .last-card {
+                        grid-column: auto !important;
+                    }
+                }
+            </style>
         </section>
 
         <!-- PROJECTS SECTION -->
@@ -1157,26 +1237,26 @@
             id="certificates"
             style="padding: 4rem 2rem; background: #fdfdfd"
         >
-        <div style="text-align: center; margin-bottom: 2rem">
-            <h2
-                style="
-                    font-size: 2rem;
-                    color: #3e3e3e;
-                    margin-bottom: 0.5rem;
-                "
-            >
-                Certificates
-            </h2>
-            <hr
-                style="
-                    width: 60px;
-                    height: 2px;
-                    background-color: #3e3e3e;
-                    border: none;
-                    margin: 0 auto;
-                "
-            />
-        </div>
+            <div style="text-align: center; margin-bottom: 2rem">
+                <h2
+                    style="
+                        font-size: 2rem;
+                        color: #3e3e3e;
+                        margin-bottom: 0.5rem;
+                    "
+                >
+                    Certificates
+                </h2>
+                <hr
+                    style="
+                        width: 60px;
+                        height: 2px;
+                        background-color: #3e3e3e;
+                        border: none;
+                        margin: 0 auto;
+                    "
+                />
+            </div>
             <div
                 style="
                     display: grid;
@@ -1240,7 +1320,7 @@
                             margin-bottom: 0.8rem;
                         "
                     >
-                    AWS · Issued 2025
+                        AWS · Issued 2025
                     </p>
 
                     <img
@@ -1276,16 +1356,9 @@
                         Udemy · Issued 2025
                     </p>
 
-                    <img
-                        src="images/certificates/UdemyML.png"
-                        al Certificate"
-                        style="
-                            width: 100%;
-                            border-radius: 5px;
-                            margin-bottom: 0.8rem;
-                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                        "
-                    />
+                    <img src="images/certificates/UdemyML.png" al Certificate"
+                    style=" width: 100%; border-radius: 5px; margin-bottom:
+                    0.8rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); " />
                 </div>
 
                 <div
