@@ -16,6 +16,17 @@
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v6.5.0/css/all.css"
         />
+        <style>
+            #main-header.transparent {
+                background: transparent !important;
+                backdrop-filter: none !important;
+            }
+
+            #main-header.scrolled {
+                background-color: rgba(0, 0, 0, 0.5) !important;
+                backdrop-filter: blur(6px) !important;
+            }
+        </style>
 
         <style>
             * {
@@ -30,6 +41,40 @@
             }
 
             /* HEADER */
+
+            #main-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 999;
+                padding: 1rem 2rem;
+                background: transparent;
+                transition: background-color 0.3s ease;
+            }
+
+            #main-header.scrolled {
+                background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+                backdrop-filter: blur(6px);
+            }
+
+            #main-header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #main-header nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                margin-left: 1.5rem;
+                transition: color 0.3s;
+            }
+
+            #main-header nav a:hover {
+                color: #ffcc00;
+            }
+
             header {
                 position: fixed;
                 top: 0;
@@ -41,6 +86,11 @@
                 align-items: center;
                 z-index: 1000;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .scrolled-header {
+                background-color: rgba(0, 0, 0, 0.5) !important;
+                backdrop-filter: blur(5px) !important;
             }
 
             header h1 {
@@ -188,6 +238,7 @@
                 <!-- Fixed Header -->
                 <div
                     id="main-header"
+                    class="transparent"
                     style="
                         position: fixed;
                         top: 0;
@@ -197,8 +248,9 @@
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        background: transparent;
                         z-index: 1000;
+                        transition: background-color 0.3s ease,
+                            backdrop-filter 0.3s ease;
                     "
                 >
                     <h1 style="margin: 0; font-size: 1.5rem; color: #3e3e3e">
@@ -924,6 +976,25 @@
                 </div>
             </div>
             <style>
+                @media (min-width: 768px) {
+                    #skills .grid-container {
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fill,
+                            minmax(300px, 1fr)
+                        );
+                        gap: 2rem;
+                    }
+
+                    /* Center last card if it's alone in the last row */
+                    #skills .grid-container > .last-card:nth-child(odd) {
+                        grid-column: 1 / -1;
+                        justify-self: center;
+                        width: 100%;
+                        max-width: 300px;
+                    }
+                }
+
                 @media (max-width: 768px) {
                     #skills .grid-container {
                         grid-template-columns: 1fr !important;
@@ -1566,5 +1637,22 @@
             </div>
             <div>© 2025 Ninaad Sawant. All rights reserved.</div>
         </footer>
+        <script>
+            const header = document.getElementById("main-header");
+            const hero = document.getElementById("hero");
+
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
+                const heroHeight = hero.offsetHeight;
+
+                if (scrollY > heroHeight - 60) {
+                    header.classList.remove("transparent");
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                    header.classList.add("transparent");
+                }
+            });
+        </script>
     </body>
 </html>
